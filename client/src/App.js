@@ -27,7 +27,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/saved" component={Saved}/>
-          <Route component={NoMatch} />
+          <Route exact path="/NoMatch" component={NoMatch} />
         </Switch>
       </Router>
     </div>

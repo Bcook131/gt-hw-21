@@ -4,6 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
@@ -25,12 +27,16 @@
   },
   "homepage": "https://github.com/Bcook131/gt-hw-21#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "mongodb": "^3.6.0",
-    "mongoose": "^5.9.27"
+    "mongoose": "^5.10.0",
+    "path": "^0.12.7",
+    "routes": "^2.1.0"
   },
   "devDependencies": {
-    "concurrently": "^5.2.0"
+    "concurrently": "^5.2.0",
+    "gh-pages": "^3.1.0"
   }
 }
